@@ -20,7 +20,7 @@ public class CoreCreditTestCase extends TestCase {
 
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","emulator-5554");
-        capabilities.setCapability("platformVersion","11");
+        capabilities.setCapability("platformVersion","10");
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","ru.sravni.android.bankproduct.debug");
         capabilities.setCapability("appActivity","ru.sravni.android.bankproduct.presentation.main.view.MainActivity");

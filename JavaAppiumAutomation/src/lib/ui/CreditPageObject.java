@@ -196,7 +196,32 @@ public class CreditPageObject extends MainPageObject
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/ivAvatarIcon"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/avatarCardView"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/ivEdit"),"");
-
-
     }
+
+    public void creditFilterType()
+    {
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Все кредиты')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'Тип кредита')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Кредиты наличными')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'Кредиты наличными')]"),"");
+    }
+
+    public void creditFilterSumm()
+    {
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'800 000 ₽')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'Сумма')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'200 000 ₽')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Готово')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'200 000 ₽')]"),"");
+    }
+
+    public void creditFilterDate()
+    {
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'5 лет')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'Срок кредита')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'3 года')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Готово')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'3 года')]"),"");
+    }
+
 }

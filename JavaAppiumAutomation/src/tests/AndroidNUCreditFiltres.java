@@ -5,6 +5,7 @@ import lib.ui.CreditPageObject;
 import lib.ui.MainPageObject;
 import lib.ui.StartPageObject;
 import org.junit.Test;
+import org.openqa.selenium.By;
 
 public class AndroidNUCreditFiltres extends CoreCreditTestCase {
 
@@ -37,8 +38,10 @@ public class AndroidNUCreditFiltres extends CoreCreditTestCase {
         lib.ui.CreditPageObject CreditPageObject = new CreditPageObject(driver);
         CreditPageObject.creditRecentAndClick();
         CreditPageObject.creditExtraditionUser();
-
-
+        CreditPageObject.creditFilterType();
+        CreditPageObject.creditFilterSumm();
+        CreditPageObject.creditFilterDate();
+        CreditPageObject.swipeElementToLeft(By.id("ru.sravni.android.bankproduct.debug:id/rvFilterPanel"),"");
 
     }
 

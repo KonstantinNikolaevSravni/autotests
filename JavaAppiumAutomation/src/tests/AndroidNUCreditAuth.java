@@ -16,7 +16,7 @@ public class AndroidNUCreditAuth extends CoreTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 
-    String PhoneNumber = "9575000401";
+    String PhoneNumber = "9575000409";
     String SMSCode = "1234";
 
     @Test
