@@ -220,7 +220,6 @@ public class CreditPageObject extends MainPageObject
         this.waitForElementAndClick(By.xpath("//*[contains(@text,'5 лет')]"),"");
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Срок кредита')]"),"");
         this.waitForElementAndClick(By.xpath("//*[contains(@text,'3 года')]"),"");
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Готово')]"),"");
         this.waitForElementPresent(By.xpath("//*[contains(@text,'3 года')]"),"");
     }
 
