@@ -223,4 +223,12 @@ public class CreditPageObject extends MainPageObject
         this.waitForElementPresent(By.xpath("//*[contains(@text,'3 года')]"),"");
     }
 
+    public void creditFilterPurpose()
+    {
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Просто деньги')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'Цель')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Рефинансирование')]"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'Рефинансирование')]"),"");
+    }
+
 }

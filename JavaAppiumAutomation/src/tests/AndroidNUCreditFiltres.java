@@ -41,7 +41,8 @@ public class AndroidNUCreditFiltres extends CoreCreditTestCase {
         CreditPageObject.creditFilterType();
         CreditPageObject.creditFilterSumm();
         CreditPageObject.creditFilterDate();
-        CreditPageObject.swipeElementToLeft(By.id("ru.sravni.android.bankproduct.debug:id/rvFilterPanel"),"");
+        CreditPageObject.swipeElementToLeft(By.id("ru.sravni.android.bankproduct.debug:id/tagBorder"),"");
+        CreditPageObject.creditFilterPurpose();
 
     }
 
