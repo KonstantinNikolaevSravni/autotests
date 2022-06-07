@@ -36,8 +36,8 @@ public class AndroidNUCreditFilters extends CoreCreditTestCase {
     public void testCreditFilters(){
 
         lib.ui.CreditPageObject CreditPageObject = new CreditPageObject(driver);
-        CreditPageObject.creditRecentAndClick();
-        CreditPageObject.creditExtraditionUser();
+
+        CreditPageObject.creditOpenExtradition();
         CreditPageObject.creditFilterType();
         CreditPageObject.creditFilterSumm();
         CreditPageObject.creditFilterDate();

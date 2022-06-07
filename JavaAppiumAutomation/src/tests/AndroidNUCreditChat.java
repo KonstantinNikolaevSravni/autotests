@@ -16,7 +16,7 @@ public class AndroidNUCreditChat extends CoreCreditTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 
-    String PhoneNumber = "9575503022";
+    String PhoneNumber = "9575503023";
     String SMSCode = "1234";
 
     @Test
@@ -93,6 +93,15 @@ public class AndroidNUCreditChat extends CoreCreditTestCase {
         // Перейти к результатам
         CreditPageObject.creditFinal();
         CreditPageObject.creditSavedSearch();
+    }
+
+    @Test
+    public void testCreditOrder()
+    {
+        lib.ui.CreditPageObject CreditPageObject = new CreditPageObject(driver);
+        CreditPageObject.creditOpenExtradition();
+        CreditPageObject.creditOrder();
+
     }
 
     @Test

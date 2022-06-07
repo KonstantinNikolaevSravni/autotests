@@ -179,23 +179,28 @@ public class CreditPageObject extends MainPageObject
         this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/btnScoringFind"),"");
     }
 
-    public void creditRecentAndClick()
+    public void creditOpenExtradition()
     {
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvRecentSummaryTitle"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvRecentSummarySubTitle"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvRecentSummaryMessage"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/imgRecentDraft"),"");
         this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/btnRecentSummary"),"");
-    }
-
-    public void creditExtraditionUser()
-    {
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/clPersonalData"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvName"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvForm"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/ivAvatarIcon"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/avatarCardView"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/ivEdit"),"");
+    }
+
+    public void creditOrder()
+    {
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/vOptional"),"");
+        this.waitForElementPresent(By.xpath("//*[contains(@text,'О кредите')]"),"");
+        this.waitForElementAndClick(By.id("//*[contains(@text,'ОТПРАВИТЬ ЗАЯВКУ')]"),"");
+
+
     }
 
     public void creditFilterType()
