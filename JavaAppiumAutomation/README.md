@@ -15,9 +15,12 @@
 4. Установить Appium и Appium Inspector
 ### Установка переменной JAVA_HOME и ANDROID_HOME
 1. Открыть терминал
-2. touch .bash_profile
-3. open .bash_profile
-4. Вписать в файл .bash_profile следующее (<user> - имя вашего пользователя):
-* export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home
-* export ANDROID_HOME="/Users/<user>/Library/Android/sdk"
-* export PATH="${PATH}:/$ANDROID_HOME/platform-tools:/$ANDROID_HOME/tools:/$ANDROID_HOME/tools/bin"
+2. В зависимости от оболочки вашего терминала необходимо открыть файл (".zshrc" / ".bashrc" / ".bash_profile")
+3. touch .zshrc 
+4. open .zshrc
+5. Вписать в файл .zshrc следующее (< user > - имя вашего пользователя):
+* export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
+* export ANDROID_HOME="/Users/< user >/Library/Android/sdk"
+* export PATH="${PATH}:/$ANDROID_HOME/emulator:/$ANDROID_HOME/platform-tools:/$ANDROID_HOME/tools:/$ANDROID_HOME/tools/bin"
+### Запуск тестов
+
