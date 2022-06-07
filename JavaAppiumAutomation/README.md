@@ -23,4 +23,19 @@
 * export ANDROID_HOME="/Users/< user >/Library/Android/sdk"
 * export PATH="${PATH}:/$ANDROID_HOME/emulator:/$ANDROID_HOME/platform-tools:/$ANDROID_HOME/tools:/$ANDROID_HOME/tools/bin"
 ### Запуск тестов
+1. В Android Studio создать и запустить виртульный девайс (Желательно использовать устройство на версии андроид 9-12)
+2. В JetBrains IDEA скопировать проект JavaAppiumAutomation
+3. Запустить Appium (Host: 127.0.0.1 Port: 4723)
+4. Запустить тест
+### Тесты
+1. AndroidNUCreditAuth
+* Авторизация с проходом через промо экраны
+* Проверка открытия и отображения оферты
+* Проверка функции свайпа промо экранов с авторизацией
+2. AndroidNUCreditChat
+* Проход кредитного чата новым пользователем
+3. AndroidNUCreditFilters
+* Проврека работы фильтров на выдаче
+4. AndroidNUScoringChat
+* Проход чата кредитного рейтнга
 

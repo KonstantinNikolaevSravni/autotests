@@ -7,7 +7,7 @@ import lib.ui.StartPageObject;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
-public class AndroidNUCreditFiltres extends CoreCreditTestCase {
+public class AndroidNUCreditFilters extends CoreCreditTestCase {
 
     private lib.ui.MainPageObject MainPageObject;
 
