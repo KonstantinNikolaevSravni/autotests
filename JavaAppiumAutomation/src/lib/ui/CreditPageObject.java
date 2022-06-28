@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 public class CreditPageObject extends MainPageObject
 {
     private static final String
-        BIG_CREDIT = "//*[contains(@text,'Подобрать')]",
+        BIG_CREDIT = "//*[contains(@text,'Подбор кредита')]",
         PURPOSE = "//*[contains(@text,'Просто деньги')]",
         SUMMA = "//*[contains(@text,'100 000')]",
         TERM = "//*[contains(@text,'1 год')]",
@@ -18,12 +18,10 @@ public class CreditPageObject extends MainPageObject
         SEND_ANSWER = "ru.sravni.android.bankproduct.debug:id/imgSendAnswer",
         SAVED_SEARCH = "//*[contains(@text,'Николаев К.Д.')]";
 
-
     public CreditPageObject(AppiumDriver driver)
     {
         super(driver);
     }
-
     public void creditBigButtonTap()
     {
         this.waitForElementAndClick(By.xpath(BIG_CREDIT),"Большая плашка не найдена");

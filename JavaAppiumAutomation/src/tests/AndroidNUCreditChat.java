@@ -16,7 +16,7 @@ public class AndroidNUCreditChat extends CoreCreditTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 
-    String PhoneNumber = "9575503023";
+    String PhoneNumber = "9565503023";
     String SMSCode = "1234";
 
     @Test

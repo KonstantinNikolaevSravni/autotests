@@ -1,5 +1,6 @@
 package tests;
 
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import lib.CoreCreditTestCase;
 import lib.ui.CreditPageObject;
 import lib.ui.MainPageObject;
@@ -16,7 +17,7 @@ public class AndroidNUScoringChat extends CoreCreditTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 
-    String PhoneNumber = "9575290403";
+    String PhoneNumber = "79565000015";
     String SMSCode = "1234";
 
     @Test
@@ -39,6 +40,8 @@ public class AndroidNUScoringChat extends CoreCreditTestCase {
         CreditPageObject.creditWriteEtMessageAndSendMessage("testprocessor.1234567890.200.3000@sravni.ru");
         CreditPageObject.creditWriteActvMessage("Николаев Константин Дмитриевич");
         CreditPageObject.creditSendMessage();
+        // Место рождения
+        CreditPageObject.creditWriteEtMessageAndSendMessage("г. Москва");
         // Ручной ввод паспорта
         CreditPageObject.creditManualScoring();
         // Дата рождения
@@ -51,12 +54,12 @@ public class AndroidNUScoringChat extends CoreCreditTestCase {
         CreditPageObject.creditWriteEtMessageAndSendMessage("10.08.2020");
         // Кем выдан
         CreditPageObject.creditWriteEtMessageAndSendMessage("Отдел УФМС по Росии в г.Санкт-Петербург");
-        // Место рождения
-        CreditPageObject.creditWriteEtMessageAndSendMessage("г. Москва");
         // Адрес прописки
         CreditPageObject.creditWriteActvMessage("Ленина 45 8");
         CreditPageObject.creditReg();
         CreditPageObject.creditSendMessage();
+        // Дата регистрации
+        CreditPageObject.creditWriteEtMessageAndSendMessage("10.08.2021");
         // Место жительства совпадает с регистрацией
         CreditPageObject.creditYesButton();
         // Все верно
