@@ -82,12 +82,12 @@ public class CreditPageObject extends MainPageObject
 
     public void creditYesButton()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Да')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Да')]"),"Не удалось нажать кнопку ДА");
     }
 
     public void creditNoButton()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Нет')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Нет')]"),"Не удалось нажать кнопку НЕТ");
     }
 
 
