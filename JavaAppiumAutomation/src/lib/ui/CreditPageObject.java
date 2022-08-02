@@ -234,4 +234,16 @@ public class CreditPageObject extends MainPageObject
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Рефинансирование')]"),"");
     }
 
+    public void CreditEditExtradition()
+    {
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/ivEdit"),"");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/actionChatRestart"),"");
+        this.waitForElementAndClick(By.id("android:id/button1"),"");
+    }
+
+    public void CreditChatEditAllRight()
+    {
+        creditAllRight();
+        creditFinal();
+    }
 }
