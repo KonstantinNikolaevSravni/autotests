@@ -29,7 +29,7 @@ public class CreditPageObject extends MainPageObject
 
     public void creditParams()
     {
-        this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/rvParams"),"Не найте экран параметров");
+        this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/rvParams"),"Не найден экран параметров");
     }
 
     public void creditTap()
@@ -41,7 +41,7 @@ public class CreditPageObject extends MainPageObject
 
     public void creditNext()
     {
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/mbNext"),"");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/mbNext"),"Не найдена кнопка ДАЛЕЕ");
     }
 
     public void creditWriteActvMessage(String value)
@@ -58,19 +58,19 @@ public class CreditPageObject extends MainPageObject
 
     public void creditSendMessage()
     {
-        this.waitForElementAndClick(By.id(SEND_ANSWER),"");
+        this.waitForElementAndClick(By.id(SEND_ANSWER),"Не найдена кнопка Отправить");
     }
 
     public void creditAutoCity()
     {
         WebElement City =  waitForElementPresent(
                 By.id(ACTV_ANSWER),
-                "Автоподстановка города не сработала"
+                "Автоподстановка города не работает"
         );
 
         String article_title = City.getText();
         Assert.assertEquals(
-                "Автоподстановка города не сработала",
+                "Автоподстановка города не работает",
                 "Москва",
                 article_title
         );
