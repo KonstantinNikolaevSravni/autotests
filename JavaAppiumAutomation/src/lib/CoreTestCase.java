@@ -22,7 +22,7 @@ public class CoreTestCase extends TestCase{
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage","ru.sravni.android.bankproduct.debug");
         capabilities.setCapability("appActivity","ru.sravni.android.bankproduct.presentation.main.view.MainActivity");
-        capabilities.setCapability("app","/Users/konstantin.nikolaev/Desktop/JavaAppiumAutomation/JavaAppiumAutomation/apks/sravni-banks-2.11.0(527)-stand-debug.apk");
+        capabilities.setCapability("app","/Users/konstantin.nikolaev/Desktop/JavaAppiumAutomation/JavaAppiumAutomation/apks/sravni-banks-2.12.0(529)-stand-debug.apk");
 
         driver = new AndroidDriver(new URL(AppiumURL), capabilities);
     }

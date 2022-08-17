@@ -24,7 +24,7 @@ public class CreditPageObject extends MainPageObject
     }
     public void creditBigButtonTap()
     {
-        this.waitForElementAndClick(By.xpath(BIG_CREDIT),"Большая плашка не найдена");
+        this.waitForElementAndClick(By.xpath(BIG_CREDIT),"Большая плашка не найдена",5);
     }
 
     public void creditParams()
@@ -34,14 +34,14 @@ public class CreditPageObject extends MainPageObject
 
     public void creditTap()
     {
-        this.waitForElementAndClick(By.xpath(PURPOSE),"");
-        this.waitForElementAndClick(By.xpath(SUMMA),"");
-        this.waitForElementAndClick(By.xpath(TERM),"");
+        this.waitForElementAndClick(By.xpath(PURPOSE),"",5);
+        this.waitForElementAndClick(By.xpath(SUMMA),"",5);
+        this.waitForElementAndClick(By.xpath(TERM),"",5);
     }
 
     public void creditNext()
     {
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/mbNext"),"Не найдена кнопка ДАЛЕЕ");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/mbNext"),"Не найдена кнопка ДАЛЕЕ",5);
     }
 
     public void creditWriteActvMessage(String value)
@@ -58,7 +58,7 @@ public class CreditPageObject extends MainPageObject
 
     public void creditSendMessage()
     {
-        this.waitForElementAndClick(By.id(SEND_ANSWER),"Не найдена кнопка Отправить");
+        this.waitForElementAndClick(By.id(SEND_ANSWER),"Не найдена кнопка Отправить",5);
     }
 
     public void creditAutoCity()
@@ -77,71 +77,67 @@ public class CreditPageObject extends MainPageObject
     }
 
     public void creditReg(){
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'г Нижний Новгород, пр-кт Ленина, д 88 к 45')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'г Нижний Новгород, пр-кт Ленина, д 88 к 45')]"),"",5);
     }
 
     public void creditYesButton()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Да')]"),"Не удалось нажать кнопку ДА");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Да')]"),"Не удалось нажать кнопку Да",5);
     }
 
     public void creditNoButton()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Нет')]"),"Не удалось нажать кнопку НЕТ");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Нет')]"),"Не удалось нажать кнопку НЕТ",5);
     }
-
-
 
     public void creditManualInput()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Ручной ввод')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Ручной ввод')]"),"", 5);
     }
 
     public void creditManualScoring()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Ввести вручную')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Ввести вручную')]"),"",5);
     }
-
 
     public void creditNotWork()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Не работаю')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Не работаю')]"),"",5);
     }
 
     public void creditAllRight()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Все верно')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Все верно')]"),"Не найдена кнопка Все верно",5);
     }
-
 
     public void creditRetiredJudge()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Судья в отставке')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Судья в отставке')]"),"",5);
     }
 
     public void creditEducation()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Высшее')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Высшее')]"),"",5);
     }
 
     public void creditIncome()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'По форме банка')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'По форме банка')]"),"",5);
     }
 
     public void creditMyPhone()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Мой номер')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Мой номер')]"),"",5);
     }
 
     public void creditSingle()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Холост/не замужем')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Холост/не замужем')]"),"",5);
     }
 
     public void creditFinal()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Перейти к результатам')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Перейти к результатам')]"),"",5);
     }
 
     public void creditScoring()
@@ -165,7 +161,7 @@ public class CreditPageObject extends MainPageObject
     }
     public void creditFlat()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Квартира')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Квартира')]"),"",5);
     }
 
     public void creditScoringMainAndClick()
@@ -174,7 +170,7 @@ public class CreditPageObject extends MainPageObject
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Узнай вероятность одобрения кредита в банках')]"),"");
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Следи за финансовой безопасностью')]"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/incScoringProgressBar"),"");
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/btnScoringFind"),"");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/btnScoringFind"),"",5);
     }
 
     public void creditOpenExtradition()
@@ -183,7 +179,7 @@ public class CreditPageObject extends MainPageObject
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvRecentSummarySubTitle"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvRecentSummaryMessage"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/imgRecentDraft"),"");
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/btnRecentSummary"),"");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/btnRecentSummary"),"",5);
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/clPersonalData"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvName"),"");
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvForm"),"");
@@ -194,51 +190,51 @@ public class CreditPageObject extends MainPageObject
 
     public void creditOrder()
     {
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/vOptional"),"");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/vOptional"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'О кредите')]"),"");
-        this.waitForElementAndClick(By.id("//*[contains(@text,'ОТПРАВИТЬ ЗАЯВКУ')]"),"");
+        this.waitForElementAndClick(By.id("//*[contains(@text,'ОТПРАВИТЬ ЗАЯВКУ')]"),"",5);
 
 
     }
 
     public void creditFilterType()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Все кредиты')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Все кредиты')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Тип кредита')]"),"");
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Кредиты наличными')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Кредиты наличными')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Кредиты наличными')]"),"");
     }
 
     public void creditFilterSumm()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'800 000 ₽')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'800 000 ₽')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Сумма')]"),"");
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'200 000 ₽')]"),"");
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Готово')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'200 000 ₽')]"),"",5);
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Готово')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'200 000 ₽')]"),"");
     }
 
     public void creditFilterDate()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'5 лет')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'5 лет')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Срок кредита')]"),"");
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'3 года')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'3 года')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'3 года')]"),"");
     }
 
     public void creditFilterPurpose()
     {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Просто деньги')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Просто деньги')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Цель')]"),"");
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Рефинансирование')]"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Рефинансирование')]"),"",5);
         this.waitForElementPresent(By.xpath("//*[contains(@text,'Рефинансирование')]"),"");
     }
 
     public void CreditEditExtradition()
     {
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/ivEdit"),"");
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/actionChatRestart"),"");
-        this.waitForElementAndClick(By.id("android:id/button1"),"");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/ivEdit"),"",5);
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/actionChatRestart"),"",5);
+        this.waitForElementAndClick(By.id("android:id/button1"),"",5);
     }
 
     public void CreditChatEditAllRight()

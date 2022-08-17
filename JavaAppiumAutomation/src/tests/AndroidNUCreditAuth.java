@@ -20,44 +20,39 @@ public class AndroidNUCreditAuth extends CoreTestCase {
     String SMSCode = "1234";
 
     @Test
-    public void testLoginFull() {
-
-      // Первый экран промо
+    public void testLoginFull() throws InterruptedException {
 
         StartPageObject StartPageObject = new StartPageObject(driver);
-        StartPageObject.promoElementTitle("ОСАГО онлайн");
-        StartPageObject.promoElementMessage("Купите или продлите любой полис ОСАГО. Сохраним все скидки, без комиссии, с экономией до 3 500 ₽");
-        StartPageObject.promoClickButton("ДАЛЕЕ");
+
+        // Первый экран промо
+
+        StartPageObject.promoScreen("ОСАГО онлайн", "Купите или продлите любой полис ОСАГО. Сохраним все скидки, без комиссии, с экономией до 3 500 ₽");
+        StartPageObject.promoButtonNext();
 
         // Второй экран промо
 
-        StartPageObject.promoElementTitle("Персональный подбор кредита");
-        StartPageObject.promoElementMessage("Заполните информацию о себе, сравните персональные предложения и узнайте какой банк одобрит кредит или кредитную карту");
-        StartPageObject.promoClickButton("ДАЛЕЕ");
+        StartPageObject.promoScreen("Персональный подбор кредита", "Заполните информацию о себе, сравните персональные предложения и узнайте какой банк одобрит кредит или кредитную карту");
+        StartPageObject.promoButtonNext();
 
         // Третий экран промо
 
-        StartPageObject.promoElementTitle("Кредитный рейтинг");
-        StartPageObject.promoElementMessage("Узнайте свой кредитный рейтинг – он влияет на решение банков о выдаче кредита");
-        StartPageObject.promoClickButton("ДАЛЕЕ");
+        StartPageObject.promoScreen("Кредитный рейтинг", "Узнайте свой кредитный рейтинг – он влияет на решение банков о выдаче кредита");
+        StartPageObject.promoButtonNext();
 
         // Четвертый экран промо
 
-        StartPageObject.promoElementTitle("Умный чат бот");
-        StartPageObject.promoElementMessage("Поможет легко заполнить любую информацию");
-        StartPageObject.promoClickButton("ДАЛЕЕ");
+        StartPageObject.promoScreen("Умный чат бот", "Поможет легко заполнить любую информацию");
+        StartPageObject.promoButtonNext();
 
         // Пятый экран промо
 
-        StartPageObject.promoElementTitle("И много других продуктов…");
-        StartPageObject.promoElementMessage("Сравните вклады, ипотеку, дебетовые карты, каско, страховки путешествий и многое другое");
-        StartPageObject.promoClickButton("ДАЛЕЕ");
+        StartPageObject.promoScreen("И много других продуктов…", "Сравните вклады, ипотеку, дебетовые карты, каско, страховки путешествий и многое другое");
+        StartPageObject.promoButtonNext();
 
         // Шестой экран промо
 
-        StartPageObject.promoElementTitle("Безопасность – наш приоритет");
-        StartPageObject.promoElementMessage("Ваши данные надежно защищены. Мы соблюдаем закон о защите персональных данных и используем многоуровневую защиту");
-        StartPageObject.promoClickButton("НАЧНЁМ");
+        StartPageObject.promoScreen("Безопасность – наш приоритет", "Ваши данные надежно защищены. Мы соблюдаем закон о защите персональных данных и используем многоуровневую защиту");
+        StartPageObject.promoButtonNextFinal();
 
         // Ввод номера
 
@@ -84,16 +79,16 @@ public class AndroidNUCreditAuth extends CoreTestCase {
         StartPageObject StartPageObject = new StartPageObject(driver);
 
         MainPageObject.waitForElementPresent(By.xpath("//*[contains(@text,'Нажимая «Далее», я соглашаюсь')]"),"");
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text,'с правилами предоставления информации')]"),"");
+        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text,'с правилами предоставления информации')]"),"",5);
         MainPageObject.waitForElementPresent(By.xpath("//*[contains(@text,'Согласие на обработку персональных данных')]"),"");
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@content-desc='Navigate up']"),"");
-        StartPageObject.promoElementTitle("ОСАГО онлайн");
+        MainPageObject.waitForElementAndClick(By.xpath("//*[@content-desc='Navigate up']"),"",5);
+     //   StartPageObject.promoElementTitle("ОСАГО онлайн");
         StartPageObject.promoSwipe("//*[contains(@text,'ОСАГО онлайн')]");
         MainPageObject.waitForElementPresent(By.xpath("//*[contains(@text,'Все банки предоставляют разные условия, например, ставки от 5.99% до 30% годовых…')]"),"");
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text,'Подробнее')]"),"");
+        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text,'Подробнее')]"),"",5);
         MainPageObject.waitForElementPresent(By.xpath("//*[contains(@text,'Все банки предоставляют разные условия, например, ставки от 5.99% до 30% годовых, срок кредита от 6 месяцев до 15 лет. Пример расчета: по кредиту на сумму 350 000 руб. на 3 года под ставку 9% годовых общая сумма выплат составит 400 716 руб. с ежемесячным платежом 11 131 руб./мес. Штраф за просрочку ежемесячного платежа: 0,05% - 0,2% от суммы просроченной задолженности за каждый день нарушения обязательств. Не является публичной офертой.')]"),"");
-        MainPageObject.waitForElementAndClick(By.xpath("//*[@content-desc='Navigate up']"),"");
-        StartPageObject.promoElementTitle("Персональный подбор кредита");
+        MainPageObject.waitForElementAndClick(By.xpath("//*[@content-desc='Navigate up']"),"",5);
+   //     StartPageObject.promoElementTitle("Персональный подбор кредита");
 
     }
 
@@ -107,7 +102,7 @@ public class AndroidNUCreditAuth extends CoreTestCase {
         StartPageObject.promoSwipe("//*[contains(@text,'Кредитный рейтинг')]");
         StartPageObject.promoSwipe("//*[contains(@text,'Умный чат бот')]");
         StartPageObject.promoSwipe("//*[contains(@text,'И много других продуктов…')]");
-        StartPageObject.promoClickButton("НАЧНЁМ");
+    //    StartPageObject.promoClickButton();
 
         // Ввод номера
 

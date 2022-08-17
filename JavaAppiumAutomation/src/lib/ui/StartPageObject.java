@@ -8,9 +8,9 @@ public class StartPageObject extends MainPageObject
 {
 
     private static final String
-        START_TV_TITLE = "ru.sravni.android.bankproduct.debug:id/tvTitle",
-        START_TV_MESSAGE = "ru.sravni.android.bankproduct.debug:id/tvMessage",
-        CLICK_BUTTON = "ru.sravni.android.bankproduct.debug:id/btnNextButton",
+
+            START_TITLE = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.view.View[1]",
+            START_DESCRIPTION = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]",
         TITLE_PHONE = "ru.sravni.android.bankproduct.debug:id/tvTitlePhone",
         TITLE_PHONE_DESC = "ru.sravni.android.bankproduct.debug:id/tvDescriptionPhone",
         ET_PHONE = "ru.sravni.android.bankproduct.debug:id/etPhone",
@@ -18,18 +18,19 @@ public class StartPageObject extends MainPageObject
         TITLE_SMS = "ru.sravni.android.bankproduct.debug:id/tvTitleSms",
         TITLE_SMS_DESC = "ru.sravni.android.bankproduct.debug:id/tvDescriptionSms",
         ET_SMS = "ru.sravni.android.bankproduct.debug:id/etSmsCode",
-        MAIN_TITLE = "ru.sravni.android.bankproduct.debug:id/title";
+        MAIN_TITLE = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View";
 
     public StartPageObject(AppiumDriver driver)
     {
         super(driver);
     }
 
-    public void promoElementTitle(String title)
+    public void promoScreen(String title, String description)
     {
         WebElement promo_title =  waitForElementPresent(
-                By.id(START_TV_TITLE),
-                "Не найден элемент заголовка"
+                By.xpath(START_TITLE),
+                "Не найден элемент заголовка",
+                15
         );
 
         String article_title = promo_title.getText();
@@ -38,27 +39,35 @@ public class StartPageObject extends MainPageObject
                 title,
                 article_title
         );
-    }
 
-    public void promoElementMessage(String message) {
-
-        WebElement promo_message = waitForElementPresent(
-                By.id(START_TV_MESSAGE),
-                "Не найден элемент описания"
+        WebElement promo_description =  waitForElementPresent(
+                By.xpath(START_DESCRIPTION),
+                "Не найден элемент описания",
+                15
         );
-        String article_message = promo_message.getText();
+
+        String article_description = promo_description.getText();
         Assert.assertEquals(
                 "Не найдено описание",
-                message,
-                article_message
+                description,
+                article_description
         );
-
     }
+
+    public void promoButtonNext() throws InterruptedException {
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'ДАЛЕЕ')]"),"button next not found",5);
+        Thread.sleep(3000);
+    }
+
+    public void promoButtonNextFinal() throws InterruptedException {
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'НАЧНЁМ')]"),"button next not found",5);
+        Thread.sleep(3000);
+    }
+
     public void mainElementTitle(String message)
     {
-
         WebElement promo_message =  waitForElementPresent(
-                By.id(MAIN_TITLE),
+                By.xpath(MAIN_TITLE),
                 "Не найден элемент ГЛАВНАЯ"
         );
         String article_message = promo_message.getText();
@@ -67,21 +76,6 @@ public class StartPageObject extends MainPageObject
                 message,
                 article_message
         );
-
-    }
-    public void promoClickButton(String button)
-    {
-        WebElement promo_button =  waitForElementPresent(
-                By.id(CLICK_BUTTON),
-                "Не найден элемент кнопки"
-        );
-        String article_button = promo_button.getText();
-        Assert.assertEquals(
-                "Не найдена кнопка",
-                button,
-                article_button
-        );
-        this.waitForElementAndClick(By.id(CLICK_BUTTON),"Не удалось нажать на кнопку");
     }
 
     public void phoneElementTitle(String title)
@@ -120,7 +114,7 @@ public class StartPageObject extends MainPageObject
 
     public void sendPhone()
     {
-        this.waitForElementAndClick(By.xpath(SEND_CODE),"СМС не отправлено");
+        this.waitForElementAndClick(By.xpath(SEND_CODE),"СМС не отправлено",5);
     }
 
     public void smsElementTitle(String title)
@@ -164,11 +158,11 @@ public class StartPageObject extends MainPageObject
 
     public void LogOut()
     {
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/actionProfile"),"");
-        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/arrow"),"");
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/actionProfile"),"",5);
+        this.waitForElementAndClick(By.id("ru.sravni.android.bankproduct.debug:id/arrow"),"",5);
         this.swipeUpToFindElement(By.xpath("//*[contains(@text,'Выход')]"),"",1);
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Выход')]"),"");
-        this.waitForElementAndClick(By.id("android:id/button1"),"");
+        this.waitForElementAndClick(By.xpath("//*[contains(@text,'Выход')]"),"",5);
+        this.waitForElementAndClick(By.id("android:id/button1"),"",5);
         this.waitForElementPresent(By.id("ru.sravni.android.bankproduct.debug:id/tvTitlePhone"),"");
 
     }

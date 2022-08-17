@@ -27,19 +27,19 @@ public class MainPageObject {
 
     public WebElement waitForElementPresent(By by, String error_message)
     {
-        return waitForElementPresent(by, error_message,12);
+        return waitForElementPresent(by, error_message,5);
     }
 
-    public WebElement waitForElementAndClick(By by, String error_message)
+    public WebElement waitForElementAndClick(By by, String error_message, long timeoutInSeconds)
     {
-        WebElement element = waitForElementPresent(by, error_message, 12);
+        WebElement element = waitForElementPresent(by, error_message, timeoutInSeconds);
         element.click();
         return element;
     }
 
     public WebElement waitForElementAndSendKeys(By by, String value, String error_message)
     {
-        WebElement element = waitForElementPresent(by, error_message, 12);
+        WebElement element = waitForElementPresent(by, error_message, 5);
         element.sendKeys(value);
         return element;
     }
@@ -55,7 +55,7 @@ public class MainPageObject {
 
     public WebElement waitForElementAndClear(By by, String error_message, long timeoutInSeconds)
     {
-        WebElement element = waitForElementPresent(by, error_message,5);
+        WebElement element = waitForElementPresent(by, error_message,3);
         element.clear();
         return element;
     }
