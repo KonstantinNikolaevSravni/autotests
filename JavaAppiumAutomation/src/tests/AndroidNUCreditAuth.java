@@ -28,32 +28,32 @@ public class AndroidNUCreditAuth extends CoreTestCase {
         // Первый экран промо
 
         StartPageObject.promoScreen("ОСАГО онлайн", "Купите или продлите любой полис ОСАГО. Сохраним все скидки, без комиссии, с экономией до 3 500 ₽");
-        StartPageObject.promoButtonNext();
+        StartPageObject.pressButton("ДАЛЕЕ");
 
         // Второй экран промо
 
         StartPageObject.promoScreen("Персональный подбор кредита", "Заполните информацию о себе, сравните персональные предложения и узнайте какой банк одобрит кредит или кредитную карту");
-        StartPageObject.promoButtonNext();
+        StartPageObject.pressButton("ДАЛЕЕ");
 
         // Третий экран промо
 
         StartPageObject.promoScreen("Кредитный рейтинг", "Узнайте свой кредитный рейтинг – он влияет на решение банков о выдаче кредита");
-        StartPageObject.promoButtonNext();
+        StartPageObject.pressButton("ДАЛЕЕ");
 
         // Четвертый экран промо
 
         StartPageObject.promoScreen("Умный чат бот", "Поможет легко заполнить любую информацию");
-        StartPageObject.promoButtonNext();
+        StartPageObject.pressButton("ДАЛЕЕ");
 
         // Пятый экран промо
 
         StartPageObject.promoScreen("И много других продуктов…", "Сравните вклады, ипотеку, дебетовые карты, каско, страховки путешествий и многое другое");
-        StartPageObject.promoButtonNext();
+        StartPageObject.pressButton("ДАЛЕЕ");
 
         // Шестой экран промо
 
         StartPageObject.promoScreen("Безопасность – наш приоритет", "Ваши данные надежно защищены. Мы соблюдаем закон о защите персональных данных и используем многоуровневую защиту");
-        StartPageObject.promoButtonNextFinal();
+        StartPageObject.pressButton("НАЧНЁМ");
 
         // Ввод номера
 
@@ -111,12 +111,12 @@ public class AndroidNUCreditAuth extends CoreTestCase {
 
         StartPageObject StartPageObject = new StartPageObject(driver);
 
-        StartPageObject.promoSwipe("//*[contains(@text,'ОСАГО онлайн')]");
-        StartPageObject.promoSwipe("//*[contains(@text,'Персональный подбор кредита')]");
-        StartPageObject.promoSwipe("//*[contains(@text,'Кредитный рейтинг')]");
-        StartPageObject.promoSwipe("//*[contains(@text,'Умный чат бот')]");
-        StartPageObject.promoSwipe("//*[contains(@text,'И много других продуктов…')]");
-        StartPageObject.promoButtonNextFinal();
+        StartPageObject.promoSwipe("ОСАГО онлайн");
+        StartPageObject.promoSwipe("Персональный подбор кредита");
+        StartPageObject.promoSwipe("Кредитный рейтинг");
+        StartPageObject.promoSwipe("Умный чат бот");
+        StartPageObject.promoSwipe("И много других продуктов…");
+        StartPageObject.pressButton("НАЧНЁМ");
 
         // Ввод номера
 

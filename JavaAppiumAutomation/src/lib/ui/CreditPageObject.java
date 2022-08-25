@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 public class CreditPageObject extends MainPageObject
 {
     private static final String
+
+    ELEMENT_TEXT = "//*[contains(@text,'{SUBSTRING}')]",
+
         BIG_CREDIT = "//*[contains(@text,'Подбор кредита')]",
         PURPOSE = "//*[contains(@text,'Просто деньги')]",
         SUMMA = "//*[contains(@text,'100 000')]",
@@ -23,6 +26,9 @@ public class CreditPageObject extends MainPageObject
         super(driver);
     }
 
+    private static String getTextInXpath (String substring) {
+        return ELEMENT_TEXT.replace("{SUBSTRING}", substring);
+    }
 
 
     public void creditBigButtonTap()

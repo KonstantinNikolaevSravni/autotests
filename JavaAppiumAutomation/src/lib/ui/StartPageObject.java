@@ -9,8 +9,8 @@ public class StartPageObject extends MainPageObject
 
     private static final String
 
-            START_TITLE = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.view.View[1]",
-            START_DESCRIPTION = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View[1]/android.view.View/android.view.View[2]",
+
+        ELEMENT_TEXT = "//*[contains(@text,'{SUBSTRING}')]",
         TITLE_PHONE = "ru.sravni.android.bankproduct.debug:id/tvTitlePhone",
         TITLE_PHONE_DESC = "ru.sravni.android.bankproduct.debug:id/tvDescriptionPhone",
         ET_PHONE = "ru.sravni.android.bankproduct.debug:id/etPhone",
@@ -28,48 +28,30 @@ public class StartPageObject extends MainPageObject
 
     public void AuthCredit(String PhoneNumber, String SMSCode)
     {
-        StartPageObject StartPageObject = new StartPageObject(driver);
-        StartPageObject.writePhone(PhoneNumber);
-        StartPageObject.sendPhone();
-        StartPageObject.writeSMS(SMSCode);
-        StartPageObject.mainElementTitle("Главная");
+        writePhone(PhoneNumber);
+        sendPhone();
+        writeSMS(SMSCode);
+        mainElementTitle("Главная");
     }
+
+    private static String getTextInXpath (String substring) {
+        return ELEMENT_TEXT.replace("{SUBSTRING}", substring);
+    }
+
     public void promoScreen(String title, String description)
     {
-        WebElement promo_title =  waitForElementPresent(
-                By.xpath(START_TITLE),
-                "Не найден элемент заголовка",
-                15
-        );
+        String promo = getTextInXpath(title);
+        this.waitForElementPresent(By.xpath(promo), "Не найден заголовок промо " + title, 5);
 
-        String article_title = promo_title.getText();
-        Assert.assertEquals(
-                "Не найден заголовок",
-                title,
-                article_title
-        );
-
-        WebElement promo_description =  waitForElementPresent(
-                By.xpath(START_DESCRIPTION),
-                "Не найден элемент описания",
-                15
-        );
-
-        String article_description = promo_description.getText();
-        Assert.assertEquals(
-                "Не найдено описание",
-                description,
-                article_description
-        );
+        String promo_desc = getTextInXpath(description);
+        this.waitForElementPresent(By.xpath(promo_desc), "Не найдено описание промо " + description, 5);
     }
 
-    public void promoButtonNext() throws InterruptedException {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'ДАЛЕЕ')]"),"button next not found",5);
-        Thread.sleep(3000);
-    }
+    public void pressButton(String button) throws InterruptedException {
 
-    public void promoButtonNextFinal() throws InterruptedException {
-        this.waitForElementAndClick(By.xpath("//*[contains(@text,'НАЧНЁМ')]"),"button next not found",5);
+        String Button_Next = getTextInXpath(button);
+        this.waitForElementAndClick(By.xpath(Button_Next),"Не могу найти " + button,5);
+
         Thread.sleep(3000);
     }
 
@@ -162,7 +144,8 @@ public class StartPageObject extends MainPageObject
 
     public void promoSwipe(String Swipe_element)
     {
-        this.swipeElementToLeft(By.xpath(Swipe_element),"Свайп не удался");
+        String Swipe_Next = getTextInXpath(Swipe_element);
+        this.swipeElementToLeft(By.xpath(Swipe_Next),"Не могу найти " + Swipe_element);
     }
 
     public void LogOut()
