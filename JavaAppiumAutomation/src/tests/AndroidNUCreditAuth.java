@@ -4,6 +4,7 @@ import lib.ui.MainPageObject;
 import lib.ui.StartPageObject;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class AndroidNUCreditAuth extends CoreTestCase {
 
@@ -78,9 +79,11 @@ public class AndroidNUCreditAuth extends CoreTestCase {
     {
         StartPageObject StartPageObject = new StartPageObject(driver);
 
-        MainPageObject.waitForElementPresent(By.xpath("//*[contains(@text,'Нажимая «Далее», я соглашаюсь c правилами предоставления информации и согласием на обработку персональных данных')]"),"");
+        WebElement element = MainPageObject.waitForElementPresent(By.xpath("//*[contains(@text,'Нажимая «Далее», я соглашаюсь c правилами предоставления информации и согласием на обработку персональных данных')]"),"");
 
-        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text,'правилами предоставления информации')]"),"",5);
+        element.findElements(By.xpath("//*[contains(@text,'правилами предоставления информации')]")).get(0).click();
+
+        MainPageObject.waitForElementAndClick(By.xpath("//*[contains(@text,'правилами предоставления информации')]"),"",10);
 
         MainPageObject.waitForElementPresent(By.xpath("//*[contains(@text,'Пользовательское соглашение сервиса Сравни.ру')]"),"",10);
         driver.navigate().back();
