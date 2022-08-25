@@ -23,12 +23,9 @@ public class AndroidNUScoringChat extends CoreCreditTestCase {
     @Test
     public void testAuth()
     {
-        StartPageObject StartPageObject = new StartPageObject(driver);
+        lib.ui.StartPageObject StartPageObject = new StartPageObject(driver);
 
-        StartPageObject.writePhone(PhoneNumber);
-        StartPageObject.sendPhone();
-        StartPageObject.writeSMS(SMSCode);
-        StartPageObject.mainElementTitle("Главная");
+        StartPageObject.AuthCredit(PhoneNumber, SMSCode);
     }
 
     @Test

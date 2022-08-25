@@ -25,6 +25,15 @@ public class StartPageObject extends MainPageObject
         super(driver);
     }
 
+
+    public void AuthCredit(String PhoneNumber, String SMSCode)
+    {
+        StartPageObject StartPageObject = new StartPageObject(driver);
+        StartPageObject.writePhone(PhoneNumber);
+        StartPageObject.sendPhone();
+        StartPageObject.writeSMS(SMSCode);
+        StartPageObject.mainElementTitle("Главная");
+    }
     public void promoScreen(String title, String description)
     {
         WebElement promo_title =  waitForElementPresent(

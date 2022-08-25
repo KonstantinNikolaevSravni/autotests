@@ -22,11 +22,9 @@ public class AndroidNUCreditChat extends CoreCreditTestCase {
     @Test
     public void testAuth()
     {
-        StartPageObject StartPageObject = new StartPageObject(driver);
-        StartPageObject.writePhone(PhoneNumber);
-        StartPageObject.sendPhone();
-        StartPageObject.writeSMS(SMSCode);
-        StartPageObject.mainElementTitle("Главная");
+        lib.ui.StartPageObject StartPageObject = new StartPageObject(driver);
+
+        StartPageObject.AuthCredit(PhoneNumber, SMSCode);
     }
 
     @Test

@@ -22,6 +22,9 @@ public class CreditPageObject extends MainPageObject
     {
         super(driver);
     }
+
+
+
     public void creditBigButtonTap()
     {
         this.waitForElementAndClick(By.xpath(BIG_CREDIT),"Большая плашка не найдена",5);
