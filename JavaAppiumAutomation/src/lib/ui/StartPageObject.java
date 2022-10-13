@@ -31,7 +31,7 @@ public class StartPageObject extends MainPageObject
         writePhone(PhoneNumber);
         sendPhone();
         writeSMS(SMSCode);
-        mainElementTitle("Главная");
+        findOneElement("Главная");
     }
 
     private static String getTextInXpath (String substring) {
@@ -55,18 +55,10 @@ public class StartPageObject extends MainPageObject
         Thread.sleep(3000);
     }
 
-    public void mainElementTitle(String message)
-    {
-        WebElement promo_message =  waitForElementPresent(
-                By.xpath(MAIN_TITLE),
-                "Не найден элемент ГЛАВНАЯ"
-        );
-        String article_message = promo_message.getText();
-        Assert.assertEquals(
-                "Не найдено ГЛАВНАЯ",
-                message,
-                article_message
-        );
+    public void findOneElement(String text){
+
+        String message = getTextInXpath(text);
+        this.waitForElementPresent(By.xpath(message), "Не найден элемент' " + text, 5);
     }
 
     public void phoneElementTitle(String title)

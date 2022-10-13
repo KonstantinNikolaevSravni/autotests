@@ -70,7 +70,7 @@ public class AndroidNUCreditAuth extends CoreTestCase {
 
         // Главный экран
 
-        StartPageObject.mainElementTitle("Главная");
+        StartPageObject.findOneElement("Главная");
 
     }
 
@@ -133,10 +133,10 @@ public class AndroidNUCreditAuth extends CoreTestCase {
 
         // Главный экран
 
-        StartPageObject.mainElementTitle("Главная");
+        StartPageObject.findOneElement("Главная");
 
         driver.runAppInBackground(5);
 
-        StartPageObject.mainElementTitle("Главная");
+        StartPageObject.findOneElement("Главная");
     }
 }
