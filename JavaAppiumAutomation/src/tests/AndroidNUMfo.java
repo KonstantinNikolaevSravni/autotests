@@ -46,9 +46,10 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         driver.context("WEBVIEW_ru.sravni.android.bankproduct.debug");
 
         //summ
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"error",50);
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/span"),"error",50);
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"10091","error");
+        //  StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"error",50);
+        StartPageObject.waitForElementAndClick(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > div > div > input"),"error",50);
+        StartPageObject.waitForElementAndClick(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > span"),"error",50);
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > div > div > input"),"10091","error");
 
         Thread.sleep(3000);
 

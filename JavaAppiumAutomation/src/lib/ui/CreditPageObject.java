@@ -33,7 +33,7 @@ public class CreditPageObject extends MainPageObject
 
     public void mfoReactNext() throws InterruptedException
     {
-        this.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",15);
+        this.waitForElementAndClick(By.cssSelector("#root > div > div > footer > button.vsBmaFp9oIDV9rBzYXgG.FGcHkbTVRATkLpYGX1Gw._artl5a._a4n4z3._1q4zb3 > span"),"",15);
 
         Thread.sleep(3000);
     }
