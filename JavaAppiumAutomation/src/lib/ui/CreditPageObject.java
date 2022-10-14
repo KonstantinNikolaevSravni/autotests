@@ -31,6 +31,13 @@ public class CreditPageObject extends MainPageObject
     }
 
 
+    public void mfoReactNext() throws InterruptedException
+    {
+        this.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",15);
+
+        Thread.sleep(3000);
+    }
+
     public void creditBigButtonTap()
     {
         this.waitForElementAndClick(By.xpath(BIG_CREDIT),"Большая плашка не найдена",5);

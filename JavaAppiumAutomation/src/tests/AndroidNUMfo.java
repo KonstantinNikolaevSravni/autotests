@@ -37,6 +37,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
 
         StartPageObject StartPageObject = new StartPageObject(driver);
 
+        CreditPageObject CreditPageObject = new CreditPageObject(driver);
+
         StartPageObject.pressButton("Получить");
 
         StartPageObject.pressButton("Подобрать займ");
@@ -51,9 +53,7 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
-
-        Thread.sleep(3000);
+        CreditPageObject.mfoReactNext();
 
         //term
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[1]/div[1]/div/div/div/div/input"),"error",50);
@@ -62,9 +62,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //FIO
         StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/textarea"),"Кейдж Константин Дмитриевич","");
@@ -72,9 +71,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //birthday
         StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/div/input"),"03.04.1990","");
@@ -82,9 +80,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //passport
         StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/div/input"),"5816268974","");
@@ -96,9 +93,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //code
 
@@ -107,9 +103,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //address
 
@@ -122,14 +117,12 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(2000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //address true
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/label/div"),"",60);
@@ -148,14 +141,12 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(2000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //next - dlc
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //family
 
@@ -181,9 +172,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //e-mail
         StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"nikolaeff@yandex.sravni","");
@@ -191,9 +181,8 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         Thread.sleep(3000);
 
         //next
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button[2]/span"),"",60);
+        CreditPageObject.mfoReactNext();
 
-        Thread.sleep(3000);
 
         //final
 
