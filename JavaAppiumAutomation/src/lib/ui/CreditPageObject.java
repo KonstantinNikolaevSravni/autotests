@@ -33,6 +33,8 @@ public class CreditPageObject extends MainPageObject
 
     public void mfoReactNext() throws InterruptedException
     {
+        Thread.sleep(3000);
+
         this.waitForElementAndClick(By.cssSelector("#root > div > div > footer > button.vsBmaFp9oIDV9rBzYXgG.FGcHkbTVRATkLpYGX1Gw._artl5a._a4n4z3._1q4zb3 > span"),"Кнопка Далее не нажата",15);
 
         Thread.sleep(3000);
@@ -40,6 +42,13 @@ public class CreditPageObject extends MainPageObject
 
     public void mfoPause() throws InterruptedException {
         Thread.sleep(2000);
+
+    }
+
+    public void mfoSummLessThen15(){
+        this.waitForElementAndClick(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > div > div > input"),"error",50);
+        this.waitForElementAndClick(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > span"),"error",50);
+        this.waitForElementAndSendKeys(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > div > div > input"),"8000","Не введена сумма");
 
     }
 
