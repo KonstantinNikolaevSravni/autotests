@@ -21,7 +21,7 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 
-    String PhoneNumber = "9577000010";
+    String PhoneNumber = "9577000014";
     String SMSCode = "1234";
 
     @Test
@@ -46,52 +46,52 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         driver.context("WEBVIEW_ru.sravni.android.bankproduct.debug");
 
         //summ
-        //  StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"error",50);
+
         StartPageObject.waitForElementAndClick(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > div > div > input"),"error",50);
         StartPageObject.waitForElementAndClick(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > span"),"error",50);
-        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > div > div > input"),"10091","error");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formSumm > div._rur2v > div._2d4dpp > div > div > div > input"),"8000","Не введена сумма");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
 
         //term
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[1]/div[1]/div/div/div/div/input"),"error",50);
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[2]/div/div/div/div[2]/div[7]/div/div[6]"),"error",50);
+        StartPageObject.waitForElementAndClick(By.cssSelector("#formShortTerm > div._rur2v > div._1brh8gh > div > div > div > div > input"),"error",50);
+        StartPageObject.waitForElementAndClick(By.cssSelector("body > div:nth-child(2) > div > div > div > div.month > div:nth-child(7) > div > div:nth-child(7)"),"error",50);
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
 
 
         //FIO
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/textarea"),"Кейдж Константин Дмитриевич","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formPassportFio > div._rur2v > div.LrTHzpuAr5zE7bl8MoZK._1dadv81 > div > div > textarea"),"Кейдж Константин Дмитриевич","");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
 
 
         //birthday
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/div/input"),"03.04.1990","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formBirthDate > div._rur2v > div.MuDHqotyyd6HDfeo9vWj > div > div > div > div > input"),"03.04.1990","");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
 
 
         //passport
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/div/input"),"5816268974","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formNumberPassport > div:nth-child(2) > div.MuDHqotyyd6HDfeo9vWj > div > div > div > div > input"),"5816268974","");
 
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[3]/div[1]/div/div/div/div/input"),"03.04.2021","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#passportPassportIssueDateField"),"03.04.2021","");
 
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[4]/div/div[1]/textarea"),"гор. Москва","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#passportBirthplaceField"),"гор. Москва","");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
@@ -99,9 +99,9 @@ public class AndroidNUMfo extends CoreCreditTestCase {
 
         //code
 
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"600003","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formAdditionalPassport > div._rur2v > div._e08cv5 > div > div > div > input"),"600003","");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
@@ -109,37 +109,42 @@ public class AndroidNUMfo extends CoreCreditTestCase {
 
         //address
 
-        StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/textarea"),"Казань шамиля усманова 12","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formRegistration > div._rur2v > div.LrTHzpuAr5zE7bl8MoZK._1dadv81 > div > div > textarea"),"Казань шамиля усманова 12","");
 
-        Thread.sleep(2000);
+        CreditPageObject.mfoPause();
 
-        StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[2]/div/div/div[1]/div"),"",60);
+        StartPageObject.waitForElementAndClick(By.cssSelector("body > div:nth-child(2) > div > div > div:nth-child(1)"),"",60);
 
-        Thread.sleep(2000);
-
-        //next
-        CreditPageObject.mfoReactNext();
-
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
 
+        //address flat
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formRegistrationFlat > div._rur2v > div.MuDHqotyyd6HDfeo9vWj > div > div > div > input"),"60","error");
+
+        CreditPageObject.mfoPause();
+
+        //next
+        CreditPageObject.mfoReactNext();
+
+        CreditPageObject.mfoPause();
 
         //address true
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/label/div"),"",60);
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //work
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[3]/label/div"),"",60);
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //monthlyincome
 
         StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"50000","");
 
-        Thread.sleep(2000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
@@ -153,24 +158,24 @@ public class AndroidNUMfo extends CoreCreditTestCase {
 
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/label/div"),"",60);
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //children
 
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[3]/label/div"),"",60);
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //education
 
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/main/form/div[3]/label/div"),"",60);
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //snils
         StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/div/input"),"16759425819","");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
@@ -179,7 +184,7 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         //e-mail
         StartPageObject.waitForElementAndSendKeys(By.xpath("/html/body/div[1]/div/div/main/form/div[2]/div[1]/div/div/div/input"),"nikolaeff@yandex.sravni","");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //next
         CreditPageObject.mfoReactNext();
@@ -189,19 +194,21 @@ public class AndroidNUMfo extends CoreCreditTestCase {
 
         StartPageObject.waitForElementAndClick(By.xpath("/html/body/div[1]/div/div/footer/button"),"",60);
 
-        Thread.sleep(10000);
+        CreditPageObject.mfoPause();
 
         driver.context("NATIVE_APP");
+
+        Thread.sleep(9000);
 
         //offer
         StartPageObject.pressButton("Получить деньги");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
         //offer shtorka
         StartPageObject.pressButton("Ввести данные карты");
 
-        Thread.sleep(3000);
+        CreditPageObject.mfoPause();
 
 
 

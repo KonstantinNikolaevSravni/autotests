@@ -33,9 +33,14 @@ public class CreditPageObject extends MainPageObject
 
     public void mfoReactNext() throws InterruptedException
     {
-        this.waitForElementAndClick(By.cssSelector("#root > div > div > footer > button.vsBmaFp9oIDV9rBzYXgG.FGcHkbTVRATkLpYGX1Gw._artl5a._a4n4z3._1q4zb3 > span"),"",15);
+        this.waitForElementAndClick(By.cssSelector("#root > div > div > footer > button.vsBmaFp9oIDV9rBzYXgG.FGcHkbTVRATkLpYGX1Gw._artl5a._a4n4z3._1q4zb3 > span"),"Кнопка Далее не нажата",15);
 
         Thread.sleep(3000);
+    }
+
+    public void mfoPause() throws InterruptedException {
+        Thread.sleep(2000);
+
     }
 
     public void creditBigButtonTap()
