@@ -21,8 +21,9 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         MainPageObject = new MainPageObject(driver);
     }
 
-    String PhoneNumber = "9577000019";
+    String PhoneNumber = "9577000028";
     String SMSCode = "1234";
+    String FIO = "Кейдж Иван Сергеевич";
 
     @Test
     public void testAuth()
@@ -62,7 +63,7 @@ public class AndroidNUMfo extends CoreCreditTestCase {
         CreditPageObject.mfoReactNext();
 
         //FIO
-        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formPassportFio > div._rur2v > div.LrTHzpuAr5zE7bl8MoZK._1dadv81 > div > div > textarea"),"Кейдж Константин Дмитриевич","");
+        StartPageObject.waitForElementAndSendKeys(By.cssSelector("#formPassportFio > div._rur2v > div.LrTHzpuAr5zE7bl8MoZK._1dadv81 > div > div > textarea"),FIO,"");
 
         //next
         CreditPageObject.mfoReactNext();
@@ -184,18 +185,25 @@ public class AndroidNUMfo extends CoreCreditTestCase {
 
         driver.context("NATIVE_APP");
 
-
         //offer
-  //      StartPageObject.pressButton("Получить деньги");
+
+//        StartPageObject.pressButton("Получить деньги");
 
  //       CreditPageObject.mfoPause();
 
         //offer shtorka
-//        StartPageObject.pressButton("Ввести данные карты");
+  //      StartPageObject.pressButton("Ввести данные карты");
 
  //       CreditPageObject.mfoPause();
     }
 
+    @Test
+    public void testMfoReactLessThen15Offer(){
+
+
+    }
+
+    @Test
     public void testMfoReactMoreThen15() throws InterruptedException {
 
         StartPageObject StartPageObject = new StartPageObject(driver);

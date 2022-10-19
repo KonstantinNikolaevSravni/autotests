@@ -58,7 +58,13 @@ public class StartPageObject extends MainPageObject
     public void findOneElement(String text){
 
         String message = getTextInXpath(text);
-        this.waitForElementPresent(By.xpath(message), "Не найден элемент' " + text, 5);
+        this.waitForElementPresent(By.xpath(message), "Не найден элемент " + text, 5);
+    }
+
+    public void findOneElementAndClick(String text){
+
+        String message = getTextInXpath(text);
+        this.waitForElementAndClick(By.xpath(message), "Не найден элемент " + text, 5);
     }
 
     public void phoneElementTitle(String title)
