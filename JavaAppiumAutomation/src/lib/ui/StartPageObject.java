@@ -3,6 +3,7 @@ import io.appium.java_client.AppiumDriver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import tests.AndroidNUCreditAuth;
 
 public class StartPageObject extends MainPageObject
 {
@@ -34,6 +35,19 @@ public class StartPageObject extends MainPageObject
         findOneElement("Главная");
     }
 
+    public void authWithPromo (String PhoneNumber, String SMSCode) throws InterruptedException {
+        pressButton("ДАЛЕЕ");
+        pressButton("ДАЛЕЕ");
+        pressButton("ДАЛЕЕ");
+        pressButton("ДАЛЕЕ");
+        pressButton("ДАЛЕЕ");
+        pressButton("НАЧНЁМ");
+        writePhone(PhoneNumber);
+        sendPhone();
+        writeSMS(SMSCode);
+        findOneElement("Главная");
+    }
+
     private static String getTextInXpath (String substring) {
         return ELEMENT_TEXT.replace("{SUBSTRING}", substring);
     }
@@ -41,16 +55,16 @@ public class StartPageObject extends MainPageObject
     public void promoScreen(String title, String description)
     {
         String promo = getTextInXpath(title);
-        this.waitForElementPresent(By.xpath(promo), "Не найден заголовок промо " + title, 5);
+        this.waitForElementPresent(By.xpath(promo), "Не найден заголовок промо " + title, 10);
 
         String promo_desc = getTextInXpath(description);
-        this.waitForElementPresent(By.xpath(promo_desc), "Не найдено описание промо " + description, 5);
+        this.waitForElementPresent(By.xpath(promo_desc), "Не найдено описание промо " + description, 10);
     }
 
     public void pressButton(String button) throws InterruptedException {
 
         String Button_Next = getTextInXpath(button);
-        this.waitForElementAndClick(By.xpath(Button_Next),"Не могу найти " + button,5);
+        this.waitForElementAndClick(By.xpath(Button_Next),"Не могу найти " + button,15);
 
         Thread.sleep(3000);
     }
@@ -58,7 +72,7 @@ public class StartPageObject extends MainPageObject
     public void findOneElement(String text){
 
         String message = getTextInXpath(text);
-        this.waitForElementPresent(By.xpath(message), "Не найден элемент " + text, 5);
+        this.waitForElementPresent(By.xpath(message), "Не найден элемент " + text, 30);
     }
 
     public void findOneElementAndClick(String text){
@@ -145,6 +159,8 @@ public class StartPageObject extends MainPageObject
         String Swipe_Next = getTextInXpath(Swipe_element);
         this.swipeElementToLeft(By.xpath(Swipe_Next),"Не могу найти " + Swipe_element);
     }
+
+
 
     public void LogOut()
     {
